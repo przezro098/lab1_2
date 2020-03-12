@@ -47,7 +47,9 @@ public class BookKeeper {
                     throw new IllegalArgumentException(item.getProductData().getType() + " not handled");
             }
 
-            Money taxValue = net.multiplyBy(ratio);
+            TaxContext context = new TaxContext();
+            context.setStrategy(new MultipliedTax());
+            Money taxValue = context.compute(net, ratio);
 
             Tax tax = new Tax(taxValue, desc);
 
