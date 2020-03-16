@@ -29,7 +29,8 @@ public class Id implements Serializable {
     protected Id() {}
 
     public static Id generate() {
-        return new Id(UUID.randomUUID().toString());
+        return new Id(UUID.randomUUID()
+                          .toString());
     }
 
     public String getId() {
@@ -43,18 +44,23 @@ public class Id implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         Id other = (Id) obj;
         if (id == null) {
-            if (other.id != null)
+            if (other.id != null) {
                 return false;
-        } else if (!id.equals(other.id))
+            }
+        } else if (!id.equals(other.id)) {
             return false;
+        }
         return true;
     }
 

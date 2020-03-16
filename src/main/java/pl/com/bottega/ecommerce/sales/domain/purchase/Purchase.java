@@ -38,8 +38,7 @@ public class Purchase {
     @SuppressWarnings("unused")
     private Purchase() {}
 
-    Purchase(Id aggregateId, ClientData clientData, List<PurchaseItem> items, Date purchaseDate, boolean paid,
-            Money totalCost) {
+    Purchase(Id aggregateId, ClientData clientData, List<PurchaseItem> items, Date purchaseDate, boolean paid, Money totalCost) {
         this.aggregateId = aggregateId;
         this.clientData = clientData;
         this.items = items;
