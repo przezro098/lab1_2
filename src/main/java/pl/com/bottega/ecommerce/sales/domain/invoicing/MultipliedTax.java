@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 public class MultipliedTax implements TaxStrategy {
     @Override
-    public Money computeTax(Money net, BigDecimal ratio) {
-        return net.multiplyBy(ratio);
+    public Tax computeTax(Money net, BigDecimal ratio, String desc) {
+        return new Tax(net.multiplyBy(ratio), desc);
     }
 }
