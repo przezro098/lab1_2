@@ -41,7 +41,7 @@ public class Invoice {
         this.gros = Money.ZERO;
     }
 
-    private static Invoice invoiceCreation(Id iId, ClientData cd) {
+    static Invoice invoiceCreation(Id iId, ClientData cd) {
         return new Invoice(iId, cd);
     }
 
